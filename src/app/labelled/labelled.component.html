@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+<div class="text">
+  <h3 class="app-dashboard-sidebar-block-title" >{{commentcount}} {{ title }}</h3>
+  <br>
+  <div [innerHTML]="text"></div>
+</div>
+
+  <div class="media-object" *ngFor="let labcomments of lcomments ">
+      <div class="media-object-section"> 
+        
+          <i class="large fas fa-user-circle fa-3x"></i>
+        
+      </div>
+      <div class="media-object-section main-section">
+        
+          {{ labcomments }}
+      </div>
+      
+    </div>

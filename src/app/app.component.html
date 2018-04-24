@@ -48,17 +48,17 @@
       <div class="app-dashboard-sidebar-inner">
         <ul class="menu vertical">
           <li class="is-active">
-            <a href="#">
+            <a routerLink="/dashboard">
               <i class="large fa fa-home"></i> Dashboard
             </a>
           </li>
           <li>
-            <a href="#">
-              <i class="large fa fa-envelope"></i> Labelled comments
+            <a routerLink="/unlabelled">
+              <i class="large fa fa-envelope"></i> Unlabelled comments
             </a>
           </li>
           <li>
-            <a href="#">
+            <a routerLink="/labelled">
               <i class="large fa fa-envelope-open"></i> Labelled comments
             </a>
           </li>
@@ -67,7 +67,8 @@
     </div>
 
     <div class="app-dashboard-body-content off-canvas-content" data-off-canvas-content>
-      
+
+      <router-outlet ></router-outlet>
     </div>
   </div>
 </div>
