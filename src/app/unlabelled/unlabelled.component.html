@@ -5,15 +5,13 @@
   <div [innerHTML]="text"></div>
 </div>
 
-  <div class="media-object" *ngFor="let comments of ulcomments ">
-      <div class="media-object-section"> 
-        
-          <i class="large fas fa-user-circle fa-3x"></i>
-        
-      </div>
+  <div class="callout secondary" *ngFor="let comments of ulcomments" data-closable>
       <div class="media-object-section main-section">
         
           {{ comments }}
+          <button class="close-button" aria-label="Toxic comment" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+          </button>
       </div>
       
     </div>

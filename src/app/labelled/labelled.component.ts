@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class LabelledComponent implements OnInit {
   // tslint:disable-next-line:no-inferrable-types
   commentcount: number;
+  // tslint:disable-next-line:no-inferrable-types
   title: string = 'Labelled Comments';
+  // tslint:disable-next-line:no-inferrable-types
   comment: string = '';
   // tslint:disable-next-line:max-line-length
   lcomments = ['Integer quis dignissim metus. Pellentesque sem magna, sagittis ut felis ac, pharetra lobortis purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque et consectetur ligula. Aliquam mollis laoreet sem, a congue arcu dictum ut. Nunc molestie augue.',

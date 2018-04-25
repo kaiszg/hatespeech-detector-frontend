@@ -5,12 +5,8 @@
   <div [innerHTML]="text"></div>
 </div>
 
-  <div class="media-object" *ngFor="let labcomments of lcomments ">
-      <div class="media-object-section"> 
-        
-          <i class="large fas fa-user-circle fa-3x"></i>
-        
-      </div>
+  <div class="callout warning" *ngFor="let labcomments of lcomments ">
+
       <div class="media-object-section main-section">
         
           {{ labcomments }}
