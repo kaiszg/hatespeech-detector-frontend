@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UnlabelledComponent } from './unlabelled/unlabelled.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'labelled', component: LabelledComponent },
   { path: 'unlabelled', component: UnlabelledComponent}
