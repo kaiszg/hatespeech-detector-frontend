@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LabelledComponent } from './labelled/labelled.component';
 import { UnlabelledComponent } from './unlabelled/unlabelled.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LabelledCommentComponent } from './labelled/labelled-comment/labelled-comment.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppComponent,
     LabelledComponent,
     UnlabelledComponent,
-    DashboardComponent
+    DashboardComponent,
+    LabelledCommentComponent
   ],
   imports: [
     BrowserModule,

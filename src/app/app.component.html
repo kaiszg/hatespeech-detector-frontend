@@ -11,7 +11,6 @@
       </div>
     </div>
     <div class="columns shrink app-dashboard-top-bar-actions">
-<!--      <button href="#" class="button hollow">Logout</button>-->
       <a href="#" height="30" width="30" alt="">
         <i class="fa fa-info-circle"></i>
       </a>
@@ -21,43 +20,19 @@
   <div class="app-dashboard-body off-canvas-wrapper">
     <div id="app-dashboard-sidebar" class="app-dashboard-sidebar position-left off-canvas off-canvas-absolute reveal-for-medium"
       data-off-canvas>
-      <div class="app-dashboard-sidebar-title-area">
-        <div class="app-dashboard-close-sidebar">
-          <h3 class="app-dashboard-sidebar-block-title">Menü</h3>
-          <!-- Close button -->
-          <button id="close-sidebar" data-app-dashboard-toggle-shrink class="app-dashboard-sidebar-close-button show-for-medium" aria-label="Close menu"
-            type="button">
-            <span aria-hidden="true">
-              <a href="#">
-                <i class="large fa fa-angle-double-left"></i>
-              </a>
-            </span>
-          </button>
-        </div>
-        <div class="app-dashboard-open-sidebar">
-          <button id="open-sidebar" data-app-dashboard-toggle-shrink class="app-dashboard-open-sidebar-button show-for-medium" aria-label="open menu"
-            type="button">
-            <span aria-hidden="true">
-              <a href="#">
-                <i class="large fa fa-angle-double-right"></i>
-              </a>
-            </span>
-          </button>
-        </div>
-      </div>
       <div class="app-dashboard-sidebar-inner">
         <ul class="menu vertical">
-          <li class="is-active">
+          <li routerLinkActive="is-active">
             <a routerLink="/dashboard">
               <i class="large fa fa-home"></i> Dashboard
             </a>
           </li>
-          <li>
+          <li routerLinkActive="is-active">
             <a routerLink="/unlabelled">
               <i class="large fa fa-envelope"></i> Unlabelled comments
             </a>
           </li>
-          <li>
+          <li routerLinkActive="is-active">
             <a routerLink="/labelled">
               <i class="large fa fa-envelope-open"></i> Labelled comments
             </a>
@@ -67,7 +42,6 @@
     </div>
 
     <div class="app-dashboard-body-content off-canvas-content" data-off-canvas-content>
-
       <router-outlet ></router-outlet>
     </div>
   </div>

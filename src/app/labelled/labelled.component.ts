@@ -1,3 +1,4 @@
+import { Comment } from './../-shared/model/comment';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,25 +7,56 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./labelled.component.scss']
 })
 export class LabelledComponent implements OnInit {
-  // tslint:disable-next-line:no-inferrable-types
-  commentcount: number;
-  // tslint:disable-next-line:no-inferrable-types
-  title: string = 'Labelled Comments';
-  // tslint:disable-next-line:no-inferrable-types
-  comment: string = '';
-  // tslint:disable-next-line:max-line-length
-  lcomments = ['Integer quis dignissim metus. Pellentesque sem magna, sagittis ut felis ac, pharetra lobortis purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque et consectetur ligula. Aliquam mollis laoreet sem, a congue arcu dictum ut. Nunc molestie augue.',
-  // tslint:disable-next-line:max-line-length
-  'In a ultricies odio, iaculis consequat erat. Integer pellentesque sodales diam, in ornare urna tempus a. Integer aliquet efficitur neque, volutpat mollis sem feugiat sed. Vivamus ac nisi non mi bibendum commodo eget nec ante. Nam volutpat malesuada lobortis. In. ',
-  // tslint:disable-next-line:max-line-length
-  'Sed lobortis sodales nulla quis efficitur. Morbi arcu ante, laoreet a rutrum non, accumsan ac nisi. Nunc ut risus maximus, ullamcorper nibh sed, interdum nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id leo vitae lectus sagittis mattis.',
-  // tslint:disable-next-line:max-line-length
-  'Proin arcu tellus, commodo ac auctor egestas, ultrices eget nibh. Phasellus turpis lorem, hendrerit sed dignissim nec, lacinia pharetra dolor. Vestibulum auctor turpis eget nisi fermentum, bibendum egestas nunc ultrices. Nam tristique imperdiet eleifend. Vivamus blandit commodo nulla, eget fermentum.',
-  // tslint:disable-next-line:max-line-length
-  'Mauris semper et neque rutrum facilisis. Duis et nunc quis nisi tempus dictum aliquet a orci. Sed elit odio, fringilla a feugiat vel, interdum ut libero. Sed nunc neque, pulvinar sed volutpat in, porta eu nunc. Maecenas fermentum, sapien nec.',
-  ];
-  constructor() { }  ngOnInit() {
-    this.commentcount = this.lcomments.length;
-  }
 
+  title = 'Labelled comments';
+
+  comments: Array<Comment>;
+
+  constructor() { }
+
+  ngOnInit() {
+    this.comments = new Array<Comment>();
+    const comment1: Comment = new Comment();
+    comment1.id = 1;
+    // tslint:disable-next-line:max-line-length
+    comment1.text = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam';
+    comment1.score = 0.94;
+    comment1.label = 'deleted';
+    comment1.timestamp = new Date('2015-12-17T03:24:00');
+    comment1.url = 'http://www.heise.com/comments/234567';
+
+    const comment2: Comment = new Comment();
+    comment2.id = 2;
+    // tslint:disable-next-line:max-line-length
+    comment2.text = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et';
+    comment2.score = 0.87;
+    comment2.label = 'not deleted';
+    comment2.timestamp = new Date('2016-01-07T03:24:00');
+    comment2.url = 'http://www.heise.com/comments/45745';
+
+    const comment3: Comment = new Comment();
+    comment3.id = 3;
+    // tslint:disable-next-line:max-line-length
+    comment3.text = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et';
+    comment3.score = 0.35;
+    comment3.label = 'discrimination';
+    comment3.timestamp = new Date('2009-03-25T03:24:00');
+    comment3.url = 'http://www.heise.com/comments/46767978';
+
+    const comment4: Comment = new Comment();
+    comment4.id = 4;
+    // tslint:disable-next-line:max-line-length
+    comment4.text = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et';
+    comment4.score = 0.23;
+    comment4.label = 'deleted';
+    comment4.timestamp = new Date('2017-07-28T03:24:00');
+    comment4.url = 'http://www.heise.com/comments/7896456345';
+
+    this.comments.push(comment1);
+    this.comments.push(comment2);
+    this.comments.push(comment3);
+    this.comments.push(comment4);
+
+    console.log(this.comments);
+  }
 }

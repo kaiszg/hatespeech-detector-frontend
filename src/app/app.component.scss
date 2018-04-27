@@ -102,6 +102,7 @@ $app-dashboard-top-nav-height: 55px;
   }
 
   .app-dashboard-sidebar-inner {
+    padding-top: 20px;
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
@@ -193,6 +194,10 @@ $app-dashboard-top-nav-height: 55px;
       }
     }
   }
+}
+
+.page-title {
+  margin-bottom: 20px;
 }
 
 // mini sidebar on medium/tablet size
