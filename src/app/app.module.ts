@@ -8,6 +8,7 @@ import { LabelledComponent } from './labelled/labelled.component';
 import { UnlabelledComponent } from './unlabelled/unlabelled.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LabelledCommentComponent } from './labelled/labelled-comment/labelled-comment.component';
+import { UnlabelledCommentComponent } from './unlabelled/unlabelled-comment/unlabelled-comment.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { LabelledCommentComponent } from './labelled/labelled-comment/labelled-c
     LabelledComponent,
     UnlabelledComponent,
     DashboardComponent,
-    LabelledCommentComponent
+    LabelledCommentComponent,
+    UnlabelledCommentComponent
   ],
   imports: [
     BrowserModule,

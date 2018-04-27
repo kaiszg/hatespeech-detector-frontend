@@ -56,7 +56,5 @@ export class LabelledComponent implements OnInit {
     this.comments.push(comment2);
     this.comments.push(comment3);
     this.comments.push(comment4);
-
-    console.log(this.comments);
   }
 }

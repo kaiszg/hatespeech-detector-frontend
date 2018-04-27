@@ -16,7 +16,12 @@
       {{ comment.text }}
     </div>
     <div class="cell small-1">
-      <span class="label float-right">{{ comment.label }}</span>
+      <div class="cell">
+        <button type="button" class="button small alert expanded">Delete</button>
+      </div>
+      <div class="cell">
+        <button type="button" class="button small success expanded">Do not delete</button>
+      </div>
     </div>
   </div>
   <div class="grid-x">

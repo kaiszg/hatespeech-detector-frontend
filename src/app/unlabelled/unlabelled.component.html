@@ -1,14 +1,4 @@
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous"> -->
-<div class="text">
-  <h3 class="app-dashboard-sidebar-block-title">{{ commentcount }} {{ title }}</h3>
-  <br>
-  <div [innerHTML]="text"></div>
+<div class="page-title">
+  <h3 class="app-dashboard-sidebar-block-title">{{ title }}</h3>
 </div>
-<div class="callout secondary" *ngFor="let comments of ulcomments" data-closable>
-  <div class="media-object-section main-section">
-    {{ comments }}
-    <button class="close-button" aria-label="Toxic comment" type="button" data-close>
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-</div>
+<app-unlabelled-comment *ngFor="let comment of comments" [comment]="comment"></app-unlabelled-comment>
