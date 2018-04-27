@@ -1,3 +1,4 @@
+import { LabelledCommentsService } from './labelled-comments.service';
 import { Comment } from './../-shared/model/comment';
 import { Component, OnInit } from '@angular/core';
 
@@ -12,7 +13,7 @@ export class LabelledComponent implements OnInit {
 
   comments: Array<Comment>;
 
-  constructor() { }
+  constructor(private labelledCommentsService: LabelledCommentsService) { }
 
   ngOnInit() {
     this.comments = new Array<Comment>();
@@ -56,5 +57,11 @@ export class LabelledComponent implements OnInit {
     this.comments.push(comment2);
     this.comments.push(comment3);
     this.comments.push(comment4);
+
+    this.labelledCommentsService.getAll().subscribe(
+      data => {
+        this.comments = data;
+      }
+    );
   }
 }

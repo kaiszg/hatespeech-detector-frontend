@@ -1,4 +1,11 @@
 <div class="page-title">
-  <h3 class="app-dashboard-sidebar-block-title">{{ title }}</h3>
+  <div class="grid-x">
+    <div class="cell small-6">
+      <h3 class="app-dashboard-sidebar-block-title">{{ title }}</h3>
+    </div>
+    <div class="cell small-6">
+      <h3 class="app-dashboard app-dashboard-sidebar-block-title float-right">{{ comments.length }}</h3>
+    </div>
+  </div>
 </div>
 <app-labelled-comment *ngFor="let comment of comments" [comment]="comment"></app-labelled-comment>

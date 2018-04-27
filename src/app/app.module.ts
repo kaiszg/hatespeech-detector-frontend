@@ -1,3 +1,4 @@
+import { UnlabelledCommentsService } from './unlabelled/unlabelled-comments.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -9,6 +10,8 @@ import { UnlabelledComponent } from './unlabelled/unlabelled.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LabelledCommentComponent } from './labelled/labelled-comment/labelled-comment.component';
 import { UnlabelledCommentComponent } from './unlabelled/unlabelled-comment/unlabelled-comment.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LabelledCommentsService } from './labelled/labelled-comments.service';
 
 
 @NgModule({
@@ -22,9 +25,13 @@ import { UnlabelledCommentComponent } from './unlabelled/unlabelled-comment/unla
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    UnlabelledCommentsService,
+    LabelledCommentsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

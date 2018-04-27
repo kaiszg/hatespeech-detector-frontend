@@ -1,5 +1,5 @@
 <div class="callout">
-  <div class="grid-x">
+  <div class="grid-x grid-margin-x">
     <div class="cell small-12 large-8 time-container">
       {{ comment.timestamp | date:'full' }}
     </div>
@@ -11,11 +11,11 @@
       </div>
     </div>
   </div>
-  <div class="grid-x">
-    <div class="cell small-11">
+  <div class="grid-x grid-margin-x">
+    <div class="cell small-10 comment-text">
       {{ comment.text }}
     </div>
-    <div class="cell small-1">
+    <div class="cell small-2">
       <div class="cell">
         <button type="button" class="button small alert expanded">Delete</button>
       </div>
@@ -26,7 +26,9 @@
   </div>
   <div class="grid-x">
     <div class="cell">
-      <a class="comment-url" [href]="comment.url">{{ comment.url }}</a>
+      <span class="float-right">
+        <a class="comment-url" [href]="comment.url">{{ comment.url }}</a>
+      </span>
     </div>
   </div>
 </div>
