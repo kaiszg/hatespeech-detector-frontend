@@ -1,5 +1,14 @@
-<div class="media-object">
-  <div class="media-object-section">
-    <h3>General view of all comments</h3>
+<div class="page-title">
+  <div class="grid-x">
+      <div class="cell small-6">
+        <h3 class="app-dashboard-sidebar-block-title">General view of all comments</h3>
+      
+        <div class="cell">
+          <h5 class="app-dashboard app-dashboard-sidebar-block-title">Number of unlabelled comments</h5>
+      </div>
+      <span class="progress-meter" [ngStyle]="{'width': getWidthProgressBar(comment)}">
+          <p class="progress-meter-text">{{ comments.length }}</p>
+      </span>
+    </div>
+   </div>
   </div>
-</div>
