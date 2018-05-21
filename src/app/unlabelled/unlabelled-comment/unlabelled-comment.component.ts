@@ -1,6 +1,8 @@
 import { Comment } from './../../-shared/model/comment';
 import { Component, OnInit, Input } from '@angular/core';
 
+declare var $: any;
+
 @Component({
   selector: 'app-unlabelled-comment',
   templateUrl: './unlabelled-comment.component.html',
@@ -13,6 +15,7 @@ export class UnlabelledCommentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    $(document).foundation();
   }
 
   getWidthProgressBar(comment: Comment) {

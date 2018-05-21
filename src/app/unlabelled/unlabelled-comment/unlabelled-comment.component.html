@@ -15,28 +15,29 @@
     <div class="cell small-10 comment-text">
       {{ comment.text }}
     </div>
-    <!--Small-2 to declare two cells-->
     <div class="cell small-2">
-      <div class="cell small-6">
-        <button type="button" class="dropdown button tiny" data-toggle="labelled-as" >Delete</button>
-        <div class="dropdown-pane" id="labelled-as" data-dropdown data-hover="true" data-hover-pane="true">
-            <ul class="menu dropdown" data-dropdown-menu>
-                <li><a href="#">Delete</a></li>
-                  <ul class="menu">
-                      <li><a href="#">Hass</a></li>
-                      <li><a href="#">Rassismus</a></li>
-                      <li><a href="#">antisemitismus</a></li>
-                      <li><a href="#">sexismus</a></li>
-                  </ul>
-              </ul>
+      <div class="cell">
+        <button class="dropdown button tiny expanded" type="button" data-toggle="dropdown-menu">Delete</button>
+        <div class="dropdown-pane" id="dropdown-menu" data-position="bottom" data-alignment="right" data-dropdown data-auto-focus="false">
+          <ul class="vertical menu">
+            <li>
+              <a>Label 1</a>
+            </li>
+            <li>
+              <a>Label 2</a>
+            </li>
+            <li>
+              <a>Label 3</a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="cell small">
-        <button type="button" class="button tiny success ">Do not delete</button>
+      <div class="cell">
+        <button type="button" class="button tiny success expanded">Do not delete</button>
       </div>
     </div>
   </div>
-  <div class="grid-x">
+  <div class="grid-x grid-margin-x">
     <div class="cell">
       <span class="float-right">
         <a class="comment-url" target="_blank" [href]="'https://www.heise.de' + comment.url">Take me to the comment</a>
