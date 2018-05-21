@@ -1,9 +1,11 @@
 .time-container {
     color: #7f8082;
+    font-size: small;
 }
 
 .comment-url {
     color: #7f8082;
+    font-size: small;
 }
 
 .callout {
@@ -13,4 +15,18 @@
 .comment-text {
   text-align: justify;
   font-size: small;
+}
+.menu {
+  margin-bottom: 0;
+  margin-right: 2rem;
+
+  &.hollow {
+    border-color: #fefefe;
+    color: #fefefe;
+    
+    &:hover {
+      background: #fefefe;
+      color: #1779ba;
+    }
+  }
 }

@@ -13,13 +13,9 @@ export class DashboardComponent implements OnInit {
   uc = 'Number of unlabelled comments';
   lc = 'Number of labelled comments';
 
-
   constructor() { }
 
   ngOnInit() {
   }
-  getWidthProgressBar(comments: Comment) {
-    const len = comments.length;
-    return len + '%';
-  }
+
 }
