@@ -1,10 +1,26 @@
 <div class="page-title">
   <div class="grid-x">
       <div class="cell small-6">
-        <h3 class="app-dashboard-sidebar-block-title">General view of all comments</h3>
+        <h3 class="app-dashboard-sidebar-block-title">{{ title }}</h3>
       
         <div class="cell">
-          <h5 class="app-dashboard app-dashboard-sidebar-block-title">Number of unlabelled comments</h5>
+          <h5 class="app-dashboard app-dashboard-sidebar-block-title">{{ uc }}</h5>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" [ngStyle]="{'width': getWidthProgressBar_ul(comment)}">
+                  <p class="progress-meter-text">{{ comments.length }}</p>
+                </span>
+              </div>
+
+        </div>
+
+        <div class="cell">
+          <h5 class="app-dashboard app-dashboard-sidebar-block-title">{{ lc }}</h5>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" [ngStyle]="{'width': getWidthProgressBar_lc(comment)}">
+                  <p class="progress-meter-text">{{ comments.length }}</p>
+                </span>
+              </div>
+
         </div>
     </div>
    </div>

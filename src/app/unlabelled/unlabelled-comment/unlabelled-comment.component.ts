@@ -1,4 +1,5 @@
 import { Comment } from './../../-shared/model/comment';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
 
 declare var $: any;
@@ -12,7 +13,7 @@ export class UnlabelledCommentComponent implements OnInit {
 
   @Input() comment: Comment;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
     $(document).foundation();
@@ -21,6 +22,10 @@ export class UnlabelledCommentComponent implements OnInit {
   getWidthProgressBar(comment: Comment) {
     const score = comment.score * 100;
     return score + '%';
+  }
+
+  getAll() {
+    return this.http.get<Array<Comment>>('http://localhost:8080/comments/unlabelled');
   }
 
 }
