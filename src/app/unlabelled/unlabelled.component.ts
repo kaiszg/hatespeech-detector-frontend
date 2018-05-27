@@ -1,4 +1,4 @@
-import { UnlabelledCommentsService } from './unlabelled-comments.service';
+import { UnlabelledCommentsService } from './../-shared/services/unlabelled-comments.service';
 import { Comment } from './../-shared/model/comment';
 import { Component, OnInit } from '@angular/core';
 

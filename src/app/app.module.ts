@@ -1,4 +1,3 @@
-import { UnlabelledCommentsService } from './unlabelled/unlabelled-comments.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -11,8 +10,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LabelledCommentComponent } from './labelled/labelled-comment/labelled-comment.component';
 import { UnlabelledCommentComponent } from './unlabelled/unlabelled-comment/unlabelled-comment.component';
 import { HttpClientModule } from '@angular/common/http';
-import { LabelledCommentsService } from './labelled/labelled-comments.service';
-
+import { LabelledCommentsService } from './-shared/services/labelled-comments.service';
+import { UnlabelledCommentsService } from './-shared/services/unlabelled-comments.service';
 
 @NgModule({
   declarations: [

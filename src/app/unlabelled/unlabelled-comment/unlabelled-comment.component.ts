@@ -1,5 +1,4 @@
 import { Comment } from './../../-shared/model/comment';
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
 
 declare var $: any;
@@ -13,7 +12,7 @@ export class UnlabelledCommentComponent implements OnInit {
 
   @Input() comment: Comment;
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   ngOnInit() {
     $(document).foundation();
@@ -23,9 +22,4 @@ export class UnlabelledCommentComponent implements OnInit {
     const score = comment.score * 100;
     return score + '%';
   }
-
-  getAll() {
-    return this.http.get<Array<Comment>>('http://localhost:8080/comments/unlabelled');
-  }
-
 }

@@ -1,4 +1,5 @@
-import { LabelledCommentsService } from './labelled-comments.service';
+import { LabelledCommentsService } from './../-shared/services/labelled-comments.service';
+
 import { Comment } from './../-shared/model/comment';
 import { Component, OnInit } from '@angular/core';
 
