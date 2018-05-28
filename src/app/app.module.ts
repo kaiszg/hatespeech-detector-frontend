@@ -13,6 +13,7 @@ import { UnlabelledCommentComponent } from './unlabelled/unlabelled-comment/unla
 import { HttpClientModule } from '@angular/common/http';
 import { LabelledCommentsService } from './-shared/services/labelled-comments.service';
 import { UnlabelledCommentsService } from './-shared/services/unlabelled-comments.service';
+import { LabelledCommentsPieComponent } from './dashboard/labelled-comments-pie/labelled-comments-pie.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UnlabelledCommentsService } from './-shared/services/unlabelled-comment
     UnlabelledComponent,
     DashboardComponent,
     LabelledCommentComponent,
-    UnlabelledCommentComponent
+    UnlabelledCommentComponent,
+    LabelledCommentsPieComponent
   ],
   imports: [
     BrowserModule,
