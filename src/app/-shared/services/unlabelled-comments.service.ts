@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Comment } from '../-shared/model/comment';
+import { Comment } from '../model/comment';
 
 @Injectable()
 export class UnlabelledCommentsService {

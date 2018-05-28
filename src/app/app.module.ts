@@ -1,3 +1,4 @@
+import { CommentsService } from './-shared/services/comments.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -28,6 +29,7 @@ import { UnlabelledCommentsService } from './-shared/services/unlabelled-comment
     HttpClientModule
   ],
   providers: [
+    CommentsService,
     UnlabelledCommentsService,
     LabelledCommentsService
   ],
