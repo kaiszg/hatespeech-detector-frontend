@@ -16,6 +16,7 @@ export class UnlabelledCommentComponent implements OnInit {
 
   ngOnInit() {
     $(document).foundation();
+    this.comment.text = this.comment.text.split('\\r\\n\\r\\n').join('<br>');
   }
 
   getWidthProgressBar(comment: Comment) {

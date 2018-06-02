@@ -3,6 +3,7 @@ import { LabelledCommentsService } from './../-shared/services/labelled-comments
 import { CommentsService } from './../-shared/services/comments.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Comment } from './../-shared/model/comment';
+
 declare var $: any;
 
 @Component({
@@ -13,8 +14,9 @@ declare var $: any;
 export class DashboardComponent implements OnInit {
 
   allComments: Array<Comment>;
-  labelledComments: Array<Comment>;
-  unlabelledComments: Array<Comment>;
+
+  labelledComments = new Array<Comment>();
+  unlabelledComments = new Array<Comment>();
 
   constructor(private commentsService: CommentsService,
             private labelledService: LabelledCommentsService,

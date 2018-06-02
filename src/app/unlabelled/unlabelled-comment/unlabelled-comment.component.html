@@ -12,9 +12,7 @@
     </div>
   </div>
   <div class="grid-x grid-margin-x">
-    <div class="cell small-10 comment-text">
-      {{ comment.text }}
-    </div>
+    <div class="cell small-10 comment-text" [innerHTML]="comment.text"></div>
     <div class="cell small-2">
       <div class="cell">
         <button class="dropdown button tiny expanded" type="button" data-toggle="dropdown-menu">Delete</button>

@@ -10,6 +10,8 @@ export class Comment {
 
     label: string;
 
+    subLabel: string;
+
     url: string;
 
 }

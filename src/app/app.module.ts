@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LabelledCommentsService } from './-shared/services/labelled-comments.service';
 import { UnlabelledCommentsService } from './-shared/services/unlabelled-comments.service';
 import { LabelledCommentsPieComponent } from './dashboard/labelled-comments-pie/labelled-comments-pie.component';
+import { TimeChartComponent } from './dashboard/time-chart/time-chart.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LabelledCommentsPieComponent } from './dashboard/labelled-comments-pie/
     DashboardComponent,
     LabelledCommentComponent,
     UnlabelledCommentComponent,
-    LabelledCommentsPieComponent
+    LabelledCommentsPieComponent,
+    TimeChartComponent
   ],
   imports: [
     BrowserModule,

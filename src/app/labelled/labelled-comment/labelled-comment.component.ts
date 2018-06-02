@@ -13,6 +13,7 @@ export class LabelledCommentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
   getWidthProgressBar(comment: Comment) {

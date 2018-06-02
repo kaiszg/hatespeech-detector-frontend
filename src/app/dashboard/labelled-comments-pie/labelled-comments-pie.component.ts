@@ -29,6 +29,9 @@ export class LabelledCommentsPieComponent implements OnInit {
                 backgroundColor: this.getDynamicBackgroudColors(labelsOfComments)
               }
             ]
+          },
+          options: {
+            responsive: true
           }
         });
 
