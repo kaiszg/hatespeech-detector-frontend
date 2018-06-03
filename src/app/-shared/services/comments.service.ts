@@ -21,4 +21,8 @@ export class CommentsService {
     return this.http.get<Array<CommentHourStatistic>>('http://localhost:8080/comments/deleted/stats//hours');
   }
 
+  updateComment(comment: Comment) {
+    return this.http.put<Comment>('http://localhost:8080/comments', comment);
+  }
+
 }

@@ -11,6 +11,7 @@ declare var $: any;
 export class UnlabelledCommentComponent implements OnInit {
 
   @Input() comment: Comment;
+  @Input() selected: boolean;
 
   constructor() { }
 

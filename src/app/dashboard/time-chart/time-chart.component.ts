@@ -24,7 +24,7 @@ export class TimeChartComponent implements OnInit {
           data: {
             labels: hours,
             datasets: [{
-              label: 'Anzahl der gelöschten Kommetare pro Stunde',
+              label: 'Number of deleted comments per hour',
               data: nbComments,
               type: 'bar',
               pointRadius: 0,
@@ -45,7 +45,7 @@ export class TimeChartComponent implements OnInit {
               yAxes: [{
                 scaleLabel: {
                   display: true,
-                  labelString: 'Anzahl der Kommentare'
+                  labelString: 'Number of comments'
                 }
               }]
             }

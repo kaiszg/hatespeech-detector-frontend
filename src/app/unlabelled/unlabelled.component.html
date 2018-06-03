@@ -8,4 +8,9 @@
     </div>
   </div>
 </div>
-<app-unlabelled-comment *ngFor="let comment of comments" [comment]="comment" data-closable></app-unlabelled-comment>
+<div class="grid-x">
+  <div class="cell note">
+    <p>* Use the right arrow of the keyboard to delete the highlighted comment or the left one to keep it.</p>
+  </div>
+</div>
+<app-unlabelled-comment *ngFor="let comment of comments; let i=index" [selected]="i == 0" [comment]="comment" data-closable></app-unlabelled-comment>
