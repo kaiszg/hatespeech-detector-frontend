@@ -18,6 +18,9 @@ export class DashboardComponent implements OnInit {
   labelledComments = new Array<Comment>();
   unlabelledComments = new Array<Comment>();
 
+  nbDeletedComments: number;
+  nbNotDeletedComments: number;
+
   constructor(private commentsService: CommentsService,
             private labelledService: LabelledCommentsService,
             private unlabelledService: UnlabelledCommentsService) { }
@@ -28,6 +31,9 @@ export class DashboardComponent implements OnInit {
         this.allComments = data;
       }
     );
+
+    this.commentsService.getNumberOfDeleted().subscribe(res => this.nbDeletedComments = res);
+    this.commentsService.getNumberOfNotDeleted().subscribe(res => this.nbNotDeletedComments = res);
 
     this.unlabelledService.getAll().subscribe(
       data => {
@@ -42,6 +48,10 @@ export class DashboardComponent implements OnInit {
         console.log(this.getWidthProgressBarLabelled());
       }
     );
+  }
+
+  getPercentage(n: number) {
+    return 100 * n / this.labelledComments.length;
   }
 
   getWidthProgressBarLabelled() {

@@ -25,4 +25,11 @@ export class CommentsService {
     return this.http.put<Comment>('http://localhost:8080/comments', comment);
   }
 
+  getNumberOfDeleted() {
+    return this.http.get<number>('http://localhost:8080/comments/deleted/count');
+  }
+
+  getNumberOfNotDeleted() {
+    return this.http.get<number>('http://localhost:8080/comments/not-deleted/count');
+  }
 }

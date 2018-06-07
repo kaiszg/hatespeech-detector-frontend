@@ -12,12 +12,21 @@ export class UnlabelledCommentComponent implements OnInit {
 
   @Input() comment: Comment;
   @Input() selected: boolean;
+  processedComment: Comment;
 
   constructor() { }
 
   ngOnInit() {
     $(document).foundation();
-    this.comment.text = this.comment.text.split('\\r\\n\\r\\n').join('<br>');
+    this.processedComment = new Comment();
+    this.processedComment.id = this.comment.id;
+    this.processedComment.label = this.comment.label;
+    this.processedComment.subLabel = this.comment.subLabel;
+    this.processedComment.timestamp = this.comment.timestamp;
+    this.processedComment.score = this.comment.score;
+    this.processedComment.url = this.comment.url;
+    this.processedComment.text = this.comment.text;
+    this.processedComment.text = this.processedComment.text.split('\\r\\n\\r\\n').join('<br>');
   }
 
   getWidthProgressBar(comment: Comment) {
