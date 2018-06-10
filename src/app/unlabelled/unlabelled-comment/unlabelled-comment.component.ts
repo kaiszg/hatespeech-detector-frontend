@@ -10,6 +10,8 @@ declare var $: any;
 })
 export class UnlabelledCommentComponent implements OnInit {
 
+  sublabels = ['hate', 'racist', 'sexism'];
+
   @Output() labelComment = new EventEmitter<Comment>();
   @Input() comment: Comment;
   processedComment: Comment;
@@ -35,9 +37,22 @@ export class UnlabelledCommentComponent implements OnInit {
     this.labelComment.emit(comment);
   }
 
-  removeComment(comment: Comment) {
+  removeComment(comment: Comment, sublabel?: string) {
+    if (sublabel) {
+      comment.subLabel = sublabel;
+    }
     comment.label = 'deleted';
     this.labelComment.emit(comment);
+  }
+
+  toggleDropdown() {
+    const targetId = '#sublabels-menu-' + this.processedComment.id;
+    if ($(targetId).hasClass('is-open')) {
+      $(targetId).removeClass('is-open');
+    }
+    else {
+      $(targetId).addClass('is-open');
+    }
   }
 
   getUrlShowText(url: string) {
@@ -45,7 +60,6 @@ export class UnlabelledCommentComponent implements OnInit {
     res = '.../' + res.substring(0, res.indexOf('/')) + '/...';
     return res;
   }
-
   getWidthProgressBar(comment: Comment) {
     const score = comment.score * 100;
     return score + '%';

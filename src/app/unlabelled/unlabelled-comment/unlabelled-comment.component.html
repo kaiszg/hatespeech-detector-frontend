@@ -5,9 +5,17 @@
   </div>
   <div class="cell small-6 large-3">
     <span class="float-right">
-      <a class="delete-link">
+      <a class="dropdown delete-link" (click)="toggleDropdown()">
         <i class="fa fa-angle-down"></i>
       </a>
+      <div class="dropdown-pane" id="sublabels-menu-{{ processedComment.id}}" data-position="bottom" data-dropdown data-auto-focus="false">
+        <ul class="vertical menu">
+          <li *ngFor="let sublabel of sublabels">
+            <a (click)="removeComment(processedComment, sublabel)">{{ sublabel }}</a>
+          </li>
+          <li>
+        </ul>
+      </div>
       <a class="delete-link" (click)="removeComment(processedComment)">
         <i class="fa fa-remove"></i>
       </a>
@@ -50,7 +58,7 @@
 <!-- <div class="cell small-2">
     <div class="cell">
       <button class="dropdown button tiny expanded" type="button" data-toggle="dropdown-menu">Delete</button>
-      <div class="dropdown-pane" id="dropdown-menu" data-position="bottom" data-alignment="right" data-dropdown data-auto-focus="false">
+      <div class="dropdown-pane" id="dropdown-menu" data-position="bottom" data-dropdown data-auto-focus="false">
         <ul class="vertical menu">
           <li>
             <a>Hate</a>

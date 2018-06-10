@@ -34,6 +34,17 @@
   color: #3adb76;
 }
 
+.dropdown-pane {
+  padding: 0.05rem;
+  border: 1px solid #000;
+  -webkit-box-shadow: 3px 2px 11px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 3px 2px 11px 0px rgba(0,0,0,0.4);
+  box-shadow: 3px 2px 11px 0px rgba(0,0,0,0.4);
+  a {
+    color: rgb(100, 100, 100);
+  }
+}
+
 .menu {
   margin-bottom: 0;
   margin-right: 2rem;
