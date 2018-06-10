@@ -17,6 +17,6 @@
 </div>
 <div class="grid-x grid-margin-x">
   <div class="cell small-12 large-6 comment-container" id="comment-{{i}}" [class.selected]="i == 0" *ngFor="let comment of comments; let i=index">
-    <app-unlabelled-comment [comment]="comment"></app-unlabelled-comment>
+    <app-unlabelled-comment [comment]="comment" (labelComment)="updateComment($event, i)"></app-unlabelled-comment>
   </div>
 </div>

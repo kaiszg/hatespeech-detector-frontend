@@ -1,5 +1,5 @@
 import { Comment } from './../../-shared/model/comment';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 
 declare var $: any;
 
@@ -10,6 +10,7 @@ declare var $: any;
 })
 export class UnlabelledCommentComponent implements OnInit {
 
+  @Output() labelComment = new EventEmitter<Comment>();
   @Input() comment: Comment;
   processedComment: Comment;
 
@@ -27,6 +28,16 @@ export class UnlabelledCommentComponent implements OnInit {
     this.processedComment.text = this.comment.text;
     this.processedComment.text = this.processedComment.text.split('\\r\\n\\r\\n').join('<br>');
     this.processedComment.text = this.processedComment.text.split('\\r\\n').join('<br>');
+  }
+
+  keepComment(comment: Comment) {
+    comment.label = 'not deleted';
+    this.labelComment.emit(comment);
+  }
+
+  removeComment(comment: Comment) {
+    comment.label = 'deleted';
+    this.labelComment.emit(comment);
   }
 
   getUrlShowText(url: string) {

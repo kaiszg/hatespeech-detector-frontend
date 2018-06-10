@@ -5,11 +5,13 @@
   </div>
   <div class="cell small-6 large-3">
     <span class="float-right">
-      <a class="delete-link" href="#">
+      <a class="delete-link">
         <i class="fa fa-angle-down"></i>
+      </a>
+      <a class="delete-link" (click)="removeComment(processedComment)">
         <i class="fa fa-remove"></i>
       </a>
-      <a class="keep-link" href="#">
+      <a class="keep-link" (click)="keepComment(processedComment)">
         <i class="fa fa-check"></i>
       </a>
     </span>

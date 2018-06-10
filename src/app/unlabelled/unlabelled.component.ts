@@ -32,6 +32,22 @@ export class UnlabelledComponent implements OnInit {
       );
   }
 
+  updateComment(comment: Comment, index: number) {
+    this.commentService.updateComment(comment).subscribe(
+      data => {
+        const containerId = '#comment-' + index;
+        const containerClass = comment.label === 'deleted' ? 'removed-comment' : 'kept-comment';
+        $(containerId).removeClass('selected');
+        $(containerId).addClass(containerClass);
+        const self = this;
+        $.when($(containerId).delay(350).fadeOut('medium'))
+          .done(function () {
+            self.comments.splice(index, 1);
+          });
+      }
+    );
+  }
+
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
 
