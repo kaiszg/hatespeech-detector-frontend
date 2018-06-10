@@ -11,7 +11,6 @@ declare var $: any;
 export class UnlabelledCommentComponent implements OnInit {
 
   @Input() comment: Comment;
-  @Input() selected: boolean;
   processedComment: Comment;
 
   constructor() { }
@@ -27,10 +26,26 @@ export class UnlabelledCommentComponent implements OnInit {
     this.processedComment.url = this.comment.url;
     this.processedComment.text = this.comment.text;
     this.processedComment.text = this.processedComment.text.split('\\r\\n\\r\\n').join('<br>');
+    this.processedComment.text = this.processedComment.text.split('\\r\\n').join('<br>');
+  }
+
+  getUrlShowText(url: string) {
+    let res = url.replace('/forum/Telepolis/Kommentare/', '');
+    res = '.../' + res.substring(0, res.indexOf('/')) + '/...';
+    return res;
   }
 
   getWidthProgressBar(comment: Comment) {
     const score = comment.score * 100;
     return score + '%';
+  }
+
+  getProgressBarColor(score: number) {
+    if (score > 0.7) {
+      return 'alert';
+    } else if (score > 0.5) {
+      return 'warning';
+    }
+    return 'success';
   }
 }

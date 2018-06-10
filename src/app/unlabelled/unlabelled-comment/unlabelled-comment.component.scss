@@ -3,6 +3,15 @@
     font-size: small;
 }
 
+.comment-container {
+  border: 1px solid #7f8082;
+}
+
+.comment-url-container {
+  margin-top: -10px;
+  margin-bottom: 5px;
+}
+
 .comment-url {
     color: #7f8082;
     font-size: small;
@@ -12,14 +21,19 @@
     border-radius: 3px;
 }
 
-.selected {
-  border: 2px solid #1779ba;
-}
-
 .comment-text {
   text-align: justify;
   font-size: small;
 }
+
+.delete-link {
+  color: #cc4b37;
+}
+
+.keep-link {
+  color: #3adb76;
+}
+
 .menu {
   margin-bottom: 0;
   margin-right: 2rem;

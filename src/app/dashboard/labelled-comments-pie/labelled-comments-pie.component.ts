@@ -34,8 +34,6 @@ export class LabelledCommentsPieComponent implements OnInit {
             responsive: true
           }
         });
-
-        console.log(this.chart);
       }
     );
   }

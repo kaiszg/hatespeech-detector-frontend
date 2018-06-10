@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
 
   labelledComments = new Array<Comment>();
   unlabelledComments = new Array<Comment>();
+  topFiveUnlabelledComments = new Array<Comment>();
 
   nbDeletedComments: number;
   nbNotDeletedComments: number;
@@ -26,9 +27,10 @@ export class DashboardComponent implements OnInit {
             private unlabelledService: UnlabelledCommentsService) { }
 
   ngOnInit() {
-    this.commentsService.getAll().subscribe(
+
+    this.commentsService.getTopFiveUnlabelledCurrentWeek().subscribe(
       data => {
-        this.allComments = data;
+        this.topFiveUnlabelledComments = data;
       }
     );
 
@@ -38,30 +40,24 @@ export class DashboardComponent implements OnInit {
     this.unlabelledService.getAll().subscribe(
       data => {
         this.unlabelledComments = data;
-        console.log(this.getWidthProgressBarUnlabelled());
       }
     );
 
     this.labelledService.getAll().subscribe(
       data => {
         this.labelledComments = data;
-        console.log(this.getWidthProgressBarLabelled());
       }
     );
+  }
+
+  getTitleFromUrl(url: string) {
+    let title = url.replace('/forum/Telepolis/Kommentare/', '');
+    title = title.substring(0, title.indexOf('/'));
+    title = title.split('-').join(' ');
+    return title;
   }
 
   getPercentage(n: number) {
     return 100 * n / this.labelledComments.length;
   }
-
-  getWidthProgressBarLabelled() {
-    const perc = 100 * this.labelledComments.length / this.allComments.length;
-    return perc + '%';
-  }
-
-  getWidthProgressBarUnlabelled() {
-    const perc = 100 * this.unlabelledComments.length / this.allComments.length;
-    return perc + '%';
-  }
-
 }

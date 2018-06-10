@@ -32,4 +32,8 @@ export class CommentsService {
   getNumberOfNotDeleted() {
     return this.http.get<number>('http://localhost:8080/comments/not-deleted/count');
   }
+
+  getTopFiveUnlabelledCurrentWeek() {
+    return this.http.get<Array<Comment>>('http://localhost:8080/comments/unlabelled/top-5-current-week');
+  }
 }

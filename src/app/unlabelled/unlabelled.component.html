@@ -10,8 +10,13 @@
 </div>
 <div class="grid-x grid-margin-x">
   <div class="cell note">
-    <p>* Use the right arrow of the keyboard to <strong>delete</strong> the highlighted comment or the left one to <strong>keep</strong> it.</p>
+    <p>* Use the right arrow of the keyboard to
+      <strong>delete</strong> the highlighted comment or the left one to
+      <strong>keep</strong> it.</p>
   </div>
 </div>
-
-<app-unlabelled-comment *ngFor="let comment of comments; let i=index" [selected]="i == 0" [comment]="comment" data-closable></app-unlabelled-comment>
+<div class="grid-x grid-margin-x">
+  <div class="cell small-12 large-6 comment-container" id="comment-{{i}}" [class.selected]="i == 0" *ngFor="let comment of comments; let i=index">
+    <app-unlabelled-comment [comment]="comment"></app-unlabelled-comment>
+  </div>
+</div>

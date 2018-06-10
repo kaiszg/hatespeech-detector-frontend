@@ -2,6 +2,7 @@ import { CommentsService } from './../-shared/services/comments.service';
 import { UnlabelledCommentsService } from './../-shared/services/unlabelled-comments.service';
 import { Comment } from './../-shared/model/comment';
 import { Component, OnInit, HostListener } from '@angular/core';
+declare var $: any;
 
 export enum KEY_CODE {
   RIGHT_ARROW = 39,
@@ -38,8 +39,13 @@ export class UnlabelledComponent implements OnInit {
       this.comments[0].label = 'deleted';
       this.commentService.updateComment(this.comments[0]).subscribe(
         data => {
-          console.log('comment marked as deleted');
-          this.comments.shift();
+          $('#comment-0').removeClass('selected');
+          $('#comment-0').addClass('removed-comment');
+          const self = this;
+          $.when($('#comment-0').delay(350).fadeOut('medium'))
+            .done(function () {
+              self.comments.shift();
+            });
         }
       );
     }
@@ -48,13 +54,15 @@ export class UnlabelledComponent implements OnInit {
       this.comments[0].label = 'not deleted';
       this.commentService.updateComment(this.comments[0]).subscribe(
         data => {
-          console.log('comment marked as not  deleted');
-          this.comments.shift();
+          $('#comment-0').removeClass('selected');
+          $('#comment-0').addClass('kept-comment');
+          const self = this;
+          $.when($('#comment-0').delay(350).fadeOut('medium'))
+            .done(function () {
+              self.comments.shift();
+            });
         }
       );
     }
   }
-
-
-
 }
