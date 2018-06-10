@@ -30,4 +30,12 @@ export class LabelledCommentComponent implements OnInit {
     return score + '%';
   }
 
+  getProgressBarColor(score: number) {
+    if (score > 0.7) {
+      return 'alert';
+    } else if (score > 0.5) {
+      return 'warning';
+    }
+    return 'success';
+  }
 }
