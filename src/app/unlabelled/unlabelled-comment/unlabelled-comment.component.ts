@@ -49,8 +49,7 @@ export class UnlabelledCommentComponent implements OnInit {
     const targetId = '#sublabels-menu-' + this.processedComment.id;
     if ($(targetId).hasClass('is-open')) {
       $(targetId).removeClass('is-open');
-    }
-    else {
+    } else {
       $(targetId).addClass('is-open');
     }
   }

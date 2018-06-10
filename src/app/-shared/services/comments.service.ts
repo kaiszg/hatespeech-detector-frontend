@@ -36,4 +36,12 @@ export class CommentsService {
   getTopFiveUnlabelledCurrentWeek() {
     return this.http.get<Array<Comment>>('http://localhost:8080/comments/unlabelled/top-5-current-week');
   }
+
+  getNbCommentsToday() {
+    return this.http.get<number>('http://localhost:8080/comments/nb-today');
+  }
+
+  getNbCommentsThisWeek() {
+    return this.http.get<number>('http://localhost:8080/comments/nb-this-week');
+  }
 }

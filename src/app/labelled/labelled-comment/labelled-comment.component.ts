@@ -30,4 +30,27 @@ export class LabelledCommentComponent implements OnInit {
     return score + '%';
   }
 
+  getUrlShowText(url: string) {
+    let res = url.replace('/forum/Telepolis/Kommentare/', '');
+    res = '.../' + res.substring(0, res.indexOf('/')) + '/...';
+    return res;
+  }
+
+  getProgressBarColor(score: number) {
+    if (score > 0.7) {
+      return 'alert';
+    } else if (score > 0.5) {
+      return 'warning';
+    }
+    return 'success';
+  }
+
+  getLabelColor(label: string) {
+    if (label === 'deleted') {
+      return 'alert';
+    } else if (label === 'not deleted') {
+      return 'success';
+    }
+    return '';
+  }
 }

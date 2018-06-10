@@ -1,7 +1,6 @@
 <div class="grid-x grid-margin-x">
   <div class="cell small-6 large-4 time-container">
-    <a class="comment-url" data-position="top" target="_blank" [href]="'https://www.heise.de' + processedComment.url">
-      <i class="fa fa-external-link"></i> {{ processedComment.timestamp | date:'MMM d, y HH:mm' }}</a>
+    <i class="fa fa-clock-o"></i> {{ processedComment.timestamp | date:'MMM d, y HH:mm' }}
   </div>
   <div class="cell small-6 large-3">
     <span class="float-right">
@@ -33,27 +32,15 @@
     </div>
   </div>
 </div>
-<!-- <div class="grid-x grid-margin-x comment-url-container">
+<div class="grid-x grid-margin-x comment-url-container">
   <div class="cell">
     <a class="comment-url" target="_blank" [href]="'https://www.heise.de' + processedComment.url">
       <i class="fa fa-external-link"></i> {{ getUrlShowText(processedComment.url) }}
     </a>
   </div>
-</div> -->
+</div>
 <div class="grid-x grid-margin-x">
-  <div class="cell small-10 comment-text" [innerHTML]="processedComment.text"></div>
-  <div class="cell small-2">
-    <div class="grid-x">
-      <div class="cell">
-
-      </div>
-    </div>
-    <div class="grid-x">
-      <div class="cell">
-
-      </div>
-    </div>
-  </div>
+  <div class="cell comment-text" [innerHTML]="processedComment.text"></div>
 </div>
 <!-- <div class="cell small-2">
     <div class="cell">

@@ -3,16 +3,20 @@
     font-size: small;
 }
 
+.comment-container {
+  border: 1px solid #7f8082;
+}
+
+.comment-url-container {
+  margin-top: -10px;
+  margin-bottom: 5px;
+}
+
 .comment-url {
     color: #7f8082;
     font-size: small;
 }
 
-.callout {
-    border-radius: 3px;
-}
-
-.comment-text {
-  text-align: justify;
-  font-size: small;
+.label {
+    padding : 3px;
 }

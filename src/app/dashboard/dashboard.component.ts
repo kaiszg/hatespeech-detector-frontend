@@ -13,6 +13,9 @@ declare var $: any;
 })
 export class DashboardComponent implements OnInit {
 
+  nbCommentsToday: number;
+  nbCommentsThisWeek: number;
+
   allComments: Array<Comment>;
 
   labelledComments = new Array<Comment>();
@@ -37,17 +40,20 @@ export class DashboardComponent implements OnInit {
     this.commentsService.getNumberOfDeleted().subscribe(res => this.nbDeletedComments = res);
     this.commentsService.getNumberOfNotDeleted().subscribe(res => this.nbNotDeletedComments = res);
 
+    this.labelledService.getAll().subscribe(
+      data => {
+        this.labelledComments = data;
+      }
+    );
+
     this.unlabelledService.getAll().subscribe(
       data => {
         this.unlabelledComments = data;
       }
     );
 
-    this.labelledService.getAll().subscribe(
-      data => {
-        this.labelledComments = data;
-      }
-    );
+    this.commentsService.getNbCommentsToday().subscribe(data => { this.nbCommentsToday = data; });
+    this.commentsService.getNbCommentsThisWeek().subscribe(data => { this.nbCommentsThisWeek = data; });
   }
 
   getTitleFromUrl(url: string) {
@@ -58,6 +64,11 @@ export class DashboardComponent implements OnInit {
   }
 
   getPercentage(n: number) {
-    return 100 * n / this.labelledComments.length;
+    this.labelledService.getAll().subscribe(
+      data => {
+        this.labelledComments = data;
+        return 100 * n / this.labelledComments.length;
+      }
+    );
   }
 }
